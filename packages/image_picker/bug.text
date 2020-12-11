@@ -1,0 +1,3 @@
+android:
+PickedFile pcikeFile = await _picker.getVideo(source: ImageSource.gallery, maxDuration: const Duration(seconds: 60));
+print(pcikeFile.path); // result：   /data/user/0/com.sjdy.mlhhq/cache/image_picker1862170422.jpg
