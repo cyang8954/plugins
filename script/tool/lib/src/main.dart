@@ -21,6 +21,7 @@ import 'format_command.dart';
 import 'java_test_command.dart';
 import 'lint_podspecs_command.dart';
 import 'list_command.dart';
+import 'tag_release_command.dart';
 import 'test_command.dart';
 import 'version_check_command.dart';
 import 'xctest_command.dart';
@@ -56,7 +57,8 @@ void main(List<String> args) {
     ..addCommand(PublishPluginCommand(packagesDir, fileSystem))
     ..addCommand(TestCommand(packagesDir, fileSystem))
     ..addCommand(VersionCheckCommand(packagesDir, fileSystem))
-    ..addCommand(XCTestCommand(packagesDir, fileSystem));
+    ..addCommand(XCTestCommand(packagesDir, fileSystem))
+    ..addCommand(TagReleaseCommand(packagesDir, fileSystem));
 
   commandRunner.run(args).catchError((Object e) {
     final ToolExit toolExit = e;
